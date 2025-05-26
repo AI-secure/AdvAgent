@@ -1,13 +1,13 @@
-# AdvWeb: Controllable Black-box Attacks on VLM-powered Web Agents
-<img src="https://github.com/yuanmengqi/AdvWeb1/blob/main/pipe_inference.png" alt="Image" width="700"/>
-Code for our paper AdvWeb: Controllable Black-box Attacks on VLM-powered Web Agents
+# AdvAgent: Controllable Blackbox Red-teaming on Web Agents
+<img src="pipe_inference.png" alt="Image" width="700"/>
+Code for our paper AdvAgent: Controllable Blackbox Red-teaming on Web Agents
 
 ## Setup
 
 Create virtual environment, for example with conda:
 ```
-conda create -n AdvWeb python=3.12.2
-conda activate AdvWeb
+conda create -n AdvAgent python=3.12.2
+conda activate AdvAgent
 ```
 
 Install dependencies:
@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 Clone this repository:
 ```
-git clone https://github.com/AI-secure/AdvWeb.git
+git clone https://github.com/AI-secure/AdvAgent.git
 ```
 
 Set up OpenAI API key and other keys to the environment:  
