@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AdvWeb</title>
+  <title>AdvAgent</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.svg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">AdvWeb: Controllable Black-box Attacks on VLM-powered Web Agents</h1>
+            <h1 class="title is-1 publication-title">AdvAgent: Controllable Blackbox Red-teaming on Web Agents</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                   <span class="author-block">
@@ -62,30 +62,30 @@
                   <a href="https://kangmintong.github.io/" target="_blank">Mintong Kang</a><sup>1</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://javyduck.github.io/" target="_blank">Jiawei Zhang</a><sup>1</sup>,
+                    <a href="https://javyduck.github.io/" target="_blank">Jiawei Zhang</a><sup>2</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://lzy37ld.github.io/" target="_blank">Zeyi Liao</a><sup>2</sup>,
+                    <a href="https://lzy37ld.github.io/" target="_blank">Zeyi Liao</a><sup>3</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://molingbo.github.io/" target="_blank">Lingbo Mo</a><sup>2</sup>,
+                    <a href="https://molingbo.github.io/" target="_blank">Lingbo Mo</a><sup>3</sup>,
                   </span>
                   <span class="author-block">
                     <a href="https://yuanmengqi.github.io/" target="_blank">Mengqi Yuan</a><sup>1</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://u.osu.edu/ihudas/people/" target="_blank">Huan Sun</a><sup>2</sup>,
+                    <a href="https://u.osu.edu/ihudas/people/" target="_blank">Huan Sun</a><sup>3</sup>,
                   </span>
                   <span class="author-block">
-                    <a href="https://aisecure.github.io/" target="_blank">Bo Li</a><sup>1</sup>,
+                    <a href="https://aisecure.github.io/" target="_blank">Bo Li</a><sup>1,2</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">University of Illinois at Urbana-Champaign<sup>1</sup>,</span>
-                    <span class="author-block">The Ohio State University<sup>2</sup>,</span>
-                    <!-- <span class="author-block">University of Science and Technology of China<sup>3</sup></span> -->
-                      <!-- <br>Conferance name and year -->
+                    <span class="author-block">University of Chicago<sup>2</sup>,</span>
+                    <span class="author-block">The Ohio State University<sup>3</sup></span>
+                       <br>ICML 2025
                     </span>
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
@@ -105,7 +105,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/AI-secure/AdvWeb" target="_blank"
+                    <a href="https://github.com/AI-secure/AdvAgent" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -137,9 +137,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/pipe_inference.jpg" alt="advweb pipeline"/>
+      <img src="static/images/pipe_inference.png" alt="advagent pipeline"/>
       <h2 class="subtitle has-text-centered">
-        AdvWeb is a black-box framework that exploits vulnerabilities in VLM-powered web agents by automatically generating and injecting adversarial prompts into web pages. It achieves high attack success rates while maintaining stealth and controllability, making these attacks significantly more flexible and efficient.
+        AdvAgent is a black-box framework that exploits vulnerabilities in VLM-powered web agents by automatically generating and injecting adversarial prompts into web pages. It achieves high attack success rates while maintaining stealth and controllability, making these attacks significantly more flexible and efficient.
       </h2>
     </div>
   </div>
@@ -154,10 +154,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Vision Language Models (VLMs) have revolutionized the creation of generalist web agents, empowering them to autonomously complete diverse tasks on real-world websites, thereby boosting human efficiency and productivity. However, despite their remarkable capabilities, the safety and security of these agents against malicious attacks remain critically underexplored, raising significant concerns about their safe deployment.
-            To uncover and exploit such vulnerabilities in web agents, we provide AdvWeb, a novel black-box attack framework designed against web agents. AdvWeb trains an adversarial prompter model that generates and injects adversarial prompts into web pages, misleading web agents into executing targeted adversarial actions such as inappropriate stock purchases or incorrect bank transactions—actions that could lead to severe real-world consequences. 
-            With only black-box access to the web agent, we train and optimize the adversarial prompter model using Direct Policy Optimization (DPO), leveraging both successful and failed attack strings against the target agent. Unlike prior approaches, our adversarial string injection maintains stealth and control: (1) the appearance of the website remains unchanged before and after the attack, making it nearly impossible for users to detect tampering, and (2) attackers can modify specific substrings within the generated adversarial string to seamlessly change the attack objective (e.g., purchasing stocks from a different company), greatly enhancing attack flexibility and efficiency.
-            We conduct extensive evaluations, demonstrating that AdvWeb achieves high success rates in attacking state-of-the-art GPT-4V-based VLM agents across various web tasks in black-box settings. Our findings expose critical vulnerabilities in current LLM/VLM-based agents, emphasizing the urgent need for developing more reliable web agents and implementing effective defenses against such adversarial threats.</p>
+            Foundation model-based agents are increasingly used to automate complex tasks, enhancing efficiency and productivity. However, their access to sensitive resources and autonomous decision-making also introduce significant security risks, where successful attacks could lead to severe consequences. To systematically uncover these vulnerabilities, we propose AdvAgent, a black-box red-teaming framework for attacking web agents. Unlike existing approaches, AdvAgent employs a reinforcement learning-based pipeline to train an adversarial prompter model that optimizes adversarial prompts using feedback from the black-box agent. With careful attack design, these prompts effectively exploit agent weaknesses while maintaining stealthiness and controllability. Extensive evaluations demonstrate that AdvAgent achieves high success rates against state-of-the-art GPT-4-based web agents across diverse web tasks. Furthermore, we find that existing prompt-based defenses provide only limited protection, leaving agents vulnerable to our framework. These findings highlight critical vulnerabilities in current web agents and emphasize the urgent need for stronger defense mechanisms.</p>
         </div>
       </div>
     </div>
@@ -178,13 +175,13 @@
   <div class="container is-max-desktop content">
       <h2 class="title is-3">Method</h2>
       <div class="content has-text-centered">
-        <img src="static/images/pipe_train_00.jpg" alt="model train" width="800" height="600"/>
+        <img src="static/images/pipe_train.png" alt="model train" width="800" height="600"/>
       </div>
       <p> 
         (a) <strong>Automatic Attack and Feedback Collection Pipeline.</strong>
         We employ LLMs as an attack prompter, generating a set of n various diverse adversarial prompts. We then evaluate whether the attack against the black-box web agent is successful using these adversarial prompts, constructing positive signals and negative signals for reinforcement learning.
         <br>
-        (b) <strong>AdvWeb Prompter Model Training.</strong> 
+        (b) <strong>AdvAgent Prompter Model Training.</strong> 
         Using the positive subsets, we perform the first stage SFT training. Leveraging both positive and negative feedback, we train the model in the second DPO stage.
       </p>
     </div>
@@ -199,7 +196,7 @@
       </div>
       <p>
         A. <strong>Attack success rate (ASR) of different algorithms with different proprietary VLM backends across various website domains.</strong> 
-        We compare our proposed AdvWeb algorithm with four strong baselines, and the attack performance of our algorithm is higher than that of the others.
+        We compare our proposed AdvAgent algorithm with four strong baselines, and the attack performance of our algorithm is higher than that of the others.
         <br>
       </p>
       <div class="content has-text-centered">
@@ -207,7 +204,7 @@
       </div>
       <p> 
         B. <strong> Attack success rate (ASR) in the controllability test.</strong> 
-        For successful attacks, the original attack targets are modified to alternative targets. We adjusted our method, AdvWeb, as well as the other four baselines to the controllable setting. The results show that AdvWeb’s performance is better than the other baselines.
+        For successful attacks, the original attack targets are modified to alternative targets. We adjusted our method, AdvAgent, as well as the other four baselines to the controllable setting. The results show that AdvAgent’s performance is better than the other baselines.
         <br>
       </p>
       <div class="content has-text-centered">
@@ -222,16 +219,16 @@
         <img src="static/images/asr4.png" alt="model train" width="650" height="350"/>
       </div>
       <p> 
-        D. <strong>Attack success rate (ASR) comparison between transfer-based black-box attacks and AdvWeb with Gemini 1.5 backend.</strong> 
-        Transfer-based attacks struggle with low ASR, as successful attacks on one model do not transfer well to other models. In contrast, AdvWeb, utilizing the RLAIF-based training paradigm with model feedback, achieves high ASR against black-box Gemini 1.5 models.
+        D. <strong>Attack success rate (ASR) comparison between transfer-based black-box attacks and AdvAgent with Gemini 1.5 backend.</strong> 
+        Transfer-based attacks struggle with low ASR, as successful attacks on one model do not transfer well to other models. In contrast, AdvAgent, utilizing the RLAIF-based training paradigm with model feedback, achieves high ASR against black-box Gemini 1.5 models.
         <br>
       </p>
       <div class="content has-text-centered">
         <img src="static/images/asr5.png" alt="model train" width="600" height="450"/>
       </div>
       <p> 
-        E. <strong>Comparison of AdvWeb attack success rate (ASR) with different training stages.</strong> 
-        We show the ASR of AdvWeb when trained using only the SFT stage versus the full adversarial prompter model trained with both the SFT and DPO stages. The results demonstrate that incorporating the DPO stage, which leverages both positive and negative feedback, leads to a significant improvement in ASR compared to using SFT alone.
+        E. <strong>Comparison of AdvAgent attack success rate (ASR) with different training stages.</strong> 
+        We show the ASR of AdvAgent when trained using only the SFT stage versus the full adversarial prompter model trained with both the SFT and DPO stages. The results demonstrate that incorporating the DPO stage, which leverages both positive and negative feedback, leads to a significant improvement in ASR compared to using SFT alone.
         <br>
       </p>
       <div class="content has-text-centered">
@@ -305,8 +302,8 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{xu2024advweb,
-  title={AdvWeb: Controllable Black-box Attacks on VLM-powered Web Agents},
+      <pre><code>@article{xu2024AdvAgent,
+  title={AdvAgent: Controllable Black-box Attacks on VLM-powered Web Agents},
   author={Xu, Chejian and Kang, Mintong and Zhang, Jiawei and Liao, Zeyi and Mo, Lingbo and Yuan, Mengqi and Sun, Huan and Li, Bo},
   journal={arXiv preprint arXiv:2410.17401},
   year={2024}
